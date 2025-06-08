@@ -1,7 +1,6 @@
 package com.example.flashcardapp
 
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
@@ -21,7 +20,6 @@ class StudyActivity : AppCompatActivity() {
     private lateinit var buttonNext: Button
     private lateinit var buttonPrevious: Button
 
-
     private var allSets: List<FlashcardSet> = listOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +27,7 @@ class StudyActivity : AppCompatActivity() {
         setContentView(R.layout.activity_study)
 
         // Intent data (optional fallback set)
-        setName = intent.getStringExtra("setName") ?: "Flashcard Set"
+        setName = intent.getStringExtra("setName") ?: getString(R.string.default_set_name)
         questions = intent.getStringArrayListExtra("questions") ?: emptyList()
         answers = intent.getStringArrayListExtra("answers") ?: emptyList()
 
@@ -41,15 +39,14 @@ class StudyActivity : AppCompatActivity() {
         buttonNext = findViewById(R.id.buttonNext)
         buttonPrevious = findViewById(R.id.buttonPrevious)
 
+        // Set initial text
+        textSetName.text = setName
 
-        // Load all sets (you'll replace this with real data later)
+        // Load sets
         allSets = loadFlashcardSets()
 
-
         // Button behavior
-        buttonShowAnswer.setOnClickListener {
-            toggleAnswer()
-        }
+        buttonShowAnswer.setOnClickListener { toggleAnswer() }
 
         buttonNext.setOnClickListener {
             if (currentIndex < questions.size - 1) {
@@ -73,12 +70,14 @@ class StudyActivity : AppCompatActivity() {
     private fun updateFlashcard() {
         if (questions.isNotEmpty() && answers.isNotEmpty()) {
             textFlashcard.text = if (showingAnswer) answers[currentIndex] else questions[currentIndex]
-            buttonShowAnswer.text = if (showingAnswer) "Show Question" else "Show Answer"
-            textScore.text = "Card ${currentIndex + 1} / ${questions.size}"
+            buttonShowAnswer.text = getString(
+                if (showingAnswer) R.string.show_question else R.string.show_answer
+            )
+            textScore.text = getString(R.string.card_progress, currentIndex + 1, questions.size)
         } else {
-            textFlashcard.text = "No flashcards available"
+            textFlashcard.text = getString(R.string.no_flashcards)
             textScore.text = ""
-            buttonShowAnswer.text = "Show Answer"
+            buttonShowAnswer.text = getString(R.string.show_answer)
         }
     }
 
@@ -87,16 +86,13 @@ class StudyActivity : AppCompatActivity() {
         updateFlashcard()
     }
 
-    // Stub function to simulate flashcard sets
     private fun loadFlashcardSets(): List<FlashcardSet> {
-        // TODO: Replace with persistent storage
         val sampleSet = FlashcardSet(
-            "Default Set",
+            getString(R.string.default_set_name),
             listOf("What is 2+2?", "Capital of France?"),
             listOf("4", "Paris")
         )
 
-        // Include the one passed from MainActivity if available
         val passedSet = if (questions.isNotEmpty() && answers.isNotEmpty()) {
             FlashcardSet(setName, questions, answers)
         } else null

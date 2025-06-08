@@ -15,6 +15,12 @@
     <string name="hint_enter_answer">Enter Answer</string>
     <string name="button_add_card">Add Card</string>
     <string name="button_save_set">Save Set</string>
+    <string name="default_set_name">Flashcard Set</string>
+    <string name="show_question">Show Question</string>
+
+    <string name="no_flashcards">No flashcards available</string>
+    <string name="card_progress">Card %1$d / %2$d</string>
+
 
 
 </resources>
