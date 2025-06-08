@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Flashcard App</string>
+    <string name="flashcard_title">Flashcards - Math Set</string>
+    <string name="score_label">Score: 0</string>
+    <string name="question_placeholder">Question?</string>
+    <string name="show_answer">Show Answer</string>
+    <string name="next">Next</string>
+    <string name="flashcard_set_label">Flashcard Set</string>
+    <string name="previous">Previous</string>
+    <string name="card_score_placeholder">Card 1 / 5</string>
+    <string name="create_new_set">Create New Set</string>
+    <string name="select_set">Select Set</string>
+    <string name="hint_enter_set_name">Enter Set Name</string>
+    <string name="hint_enter_question">Enter Question</string>
+    <string name="hint_enter_answer">Enter Answer</string>
+    <string name="button_add_card">Add Card</string>
+    <string name="button_save_set">Save Set</string>
+
+
+</resources>

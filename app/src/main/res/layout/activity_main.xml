@@ -1,0 +1,36 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_rounded_blue"
+    android:padding="24dp">
+
+    <Button
+        android:id="@+id/buttonCreateSet"
+        android:backgroundTint="@color/button_primary"
+        android:textColor="@android:color/white"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/create_new_set"
+        app:layout_constraintBottom_toTopOf="@id/buttonSelectSet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/buttonSelectSet"
+        android:backgroundTint="@color/button_secondary"
+        android:textColor="@android:color/white"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/select_set"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonCreateSet" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

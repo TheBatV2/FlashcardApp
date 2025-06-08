@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:id="@+id/main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_rounded_blue"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editSetName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_enter_set_name"
+            android:inputType="textCapWords"
+            android:autofillHints="name"
+            android:minHeight="48dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/editQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_enter_question"
+            android:inputType="textMultiLine"
+            android:autofillHints="none"
+            android:minHeight="48dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/editAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_enter_answer"
+            android:inputType="textMultiLine"
+            android:autofillHints="none"
+            android:minHeight="48dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"/>
+
+        <Button
+            android:id="@+id/buttonAddCard"
+            android:backgroundTint="@color/button_primary"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_add_card" />
+
+        <Button
+            android:id="@+id/buttonSaveSet"
+            android:backgroundTint="@color/button_secondary"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_save_set"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>

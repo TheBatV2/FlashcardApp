@@ -1,0 +1,76 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_rounded_blue"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textSetName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/flashcard_set_label"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/card_score_placeholder"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/textSetName"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textFlashcard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/question_placeholder"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:padding="20dp"
+        android:background="#F0F0F0"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/textScore"
+        app:layout_constraintBottom_toTopOf="@id/buttonShowAnswer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/buttonShowAnswer"
+        android:backgroundTint="@color/button_primary"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_answer"
+        app:layout_constraintBottom_toTopOf="@id/buttonNext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:backgroundTint="@color/button_secondary"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/buttonPrevious"
+        android:backgroundTint="@color/button_accent"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/previous"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="8dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
